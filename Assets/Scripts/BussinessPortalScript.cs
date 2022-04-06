@@ -11,4 +11,5 @@ public class BussinessPortalScript : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+
 }
