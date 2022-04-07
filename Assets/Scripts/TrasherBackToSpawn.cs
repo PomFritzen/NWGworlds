@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class TrasherBackToSpawn : MonoBehaviour
 {
+    GameObject table;
+
+    void Awake()
+    {
+        table = GameObject.Find("PBR_Table");
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
-        GameObject table = GameObject.Find("PCR_Table").GetComponent<GameObject>();
-        if (other.gameObject.Equals("Trasher"))
+        
+        if (other.gameObject.name == "Trasher")
         {
             this.transform.position = table.transform.position;
         }

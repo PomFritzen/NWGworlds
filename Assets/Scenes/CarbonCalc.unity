@@ -313,7 +313,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2020822082516495889, guid: f6d4109da7a8fb14598e335baed19ec6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f6d4109da7a8fb14598e335baed19ec6, type: 3}
 --- !u!1 &206959989 stripped
 GameObject:
@@ -1789,8 +1790,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354129542}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -3.902, y: 0.673, z: 1.296}
-  m_LocalScale: {x: 1.9, y: 0.02, z: 1}
+  m_LocalPosition: {x: -3.847, y: 1.033, z: 1.296}
+  m_LocalScale: {x: 2.35, y: 1.5, z: 1.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14

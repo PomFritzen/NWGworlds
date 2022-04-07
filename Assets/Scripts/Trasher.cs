@@ -16,67 +16,25 @@ public class Trasher : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        if (other.gameObject.Equals("Car"))
+        if (other.gameObject.name == "Car")
         {
             value += 50;
-            displayerObj.text = "Carbon" + value;
+            displayerObj.text = "Carbon " + value;
         }
 
-        if (other.gameObject.Equals("Plane"))
+        if (other.gameObject.name == "Plane")
         {
             Debug.Log("Trasher was hit");
             value += 100;
-            displayerObj.text = "Carbon" + value;
+            displayerObj.text = "Carbon " + value;
         }
 
-        if (other.gameObject.Equals("Laptop"))
+        if (other.gameObject.name == "Laptop")
         {
             value += 10;
-            displayerObj.text = "Carbon" + value;
+            displayerObj.text = "Carbon " + value;
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.Equals("Car"))
-        {
-            value += 50;
-            displayerObj.text = "Carbon" + value;
-        }
-
-        if (other.gameObject.Equals("Plane"))
-        {
-            Debug.Log("Trasher was hit");
-            value += 100;
-            displayerObj.text = "Carbon" + value;
-        }
-
-        if (other.gameObject.Equals("Laptop"))
-        {
-            value += 10;
-            displayerObj.text = "Carbon" + value;
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.Equals("Car"))
-        {
-            value += 50;
-            displayerObj.text = "Carbon" + value;
-        }
-
-        if (collision.gameObject.Equals("Plane"))
-        {
-            Debug.Log("Trasher was hit");
-            value += 100;
-            displayerObj.text = "Carbon" + value;
-        }
-
-        if (collision.gameObject.Equals("Laptop"))
-        {
-            value += 10;
-            displayerObj.text = "Carbon" + value;
-        }
-    }
+   
 }
