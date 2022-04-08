@@ -17,7 +17,9 @@ public class TrasherBackToSpawn : MonoBehaviour
         
         if (other.gameObject.name == "Trasher")
         {
-            this.transform.position = table.transform.position;
+            var pos = table.transform.position;
+            pos.y = pos.y + 1;
+            this.transform.position = pos;
         }
     }
 }
