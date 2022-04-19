@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CarbonCalc.unity
     guid: 7d71dbf52d03fbb48b9414bd3461c721
+  - enabled: 1
+    path: Assets/Scenes/CarbonCalcRedux.unity
+    guid: 0ef774fe3dc4e4649a7869118b96d8a2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3d218964cb29f9c448261a1590e95478, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3641d6e1a50ceed45b37dbc6c027ff5f, type: 2}

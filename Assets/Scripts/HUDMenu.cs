@@ -11,6 +11,7 @@ public class HUDMenu : MonoBehaviour
     public void KWBtn1Clicked()
     {
         Debug.Log("ButtonWasClicked");
+        SceneManager.LoadScene(3);
     }
 
     public void KWBtn2Clicked()

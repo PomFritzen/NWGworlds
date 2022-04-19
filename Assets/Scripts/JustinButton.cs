@@ -14,12 +14,14 @@ public class JustinButton : MonoBehaviour
     private bool _isPressed;
     private Vector3 _startPos;
     private ConfigurableJoint _joint;
+    private CarbonCalcButtons ccb;
 
     // Start is called before the first frame update
     void Start()
     {
         _startPos = transform.localPosition;
         _joint = GetComponent<ConfigurableJoint>();
+        ccb = new CarbonCalcButtons();
     }
 
     // Update is called once per frame
@@ -50,7 +52,7 @@ public class JustinButton : MonoBehaviour
         return Mathf.Clamp(value, -1f, 1f);
     }
 
-    private void Pressed()
+    public void Pressed()
     {
         _isPressed = true;
         onPressed.Invoke();
@@ -58,7 +60,7 @@ public class JustinButton : MonoBehaviour
 
     }
 
-    private void Released()
+    public void Released()
     {
         _isPressed = false;
         onReleased.Invoke();
