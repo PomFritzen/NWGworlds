@@ -8,6 +8,7 @@ public class RespawnBalls : MonoBehaviour
 
     GameObject spawnpoint;
     Rigidbody rbody;
+    Transform originalRotation;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class RespawnBalls : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "HoopHit")
+        if (other.gameObject.name == "HoopHit" || other.gameObject.transform.parent.gameObject.name == "TriggerZone")
         {
             rbody.velocity = Vector3.zero;
             rbody.angularVelocity = Vector3.zero;
