@@ -59,13 +59,15 @@ public class CalculationFunctions : MonoBehaviour
 
         if (milesOrKilometers)
         {
-
+            return 0.0;
         }
 
         if (!milesOrKilometers)
         {
-
+            return 0.0;
         }
+
+        return 0.0;
     }
 
     public void AddCarsToList(ArrayList listToAddTo, ArrayList listToAddFrom, int type)
