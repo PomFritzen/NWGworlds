@@ -23,13 +23,13 @@ public class CarLeverScript : MonoBehaviour
     {
         if (other.gameObject.name == "morkmColliderK")
         {
-            Debug.Log("K was hit");
+            //Debug.Log("K was hit");
             morkm.text = "Kilometers";
         }
 
         if (other.gameObject.name == "morkmColliderM")
         {
-            Debug.Log("M was hit");
+            //Debug.Log("M was hit");
             morkm.text = "Miles";
         }
     }
