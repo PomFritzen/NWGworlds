@@ -55,20 +55,54 @@ public static class CalculationFunctions
     }
 
     //kgPr is kgCO2e per litre for km calculations and is kg CO2 per gallon for miles calculations
-    public static double CompanyVehiclesKnownEfficiency(bool milesOrKilometers, double efficiency, int distance, double kgPr)
+    public static double CompanyVehiclesKnownEfficiency(bool fuelType, bool milesOrKilometers, int carAmount, int efficiency, int distance)
     {
-        //true = kilometers
-        if (milesOrKilometers)
+        //KM
+        if (milesOrKilometers == true)
         {
-            double result = (efficiency / 100) * distance * (kgPr / 1000);
-            return result;
+            //Diesel
+            if (fuelType == true)
+            {
+                double kgco2perlitre = 2.7;
+
+                double result = efficiency / 100 * distance * kgco2perlitre / 1000;
+
+                return result;
+            }
+
+            //Gasoline
+            if (fuelType == false)
+            {
+                double kgco2perlitre = 2.3;
+
+                double result = efficiency / 100 * distance * kgco2perlitre / 1000;
+
+                return result;
+            }
         }
 
-        //false = miles
-        if (!milesOrKilometers)
+        //M
+        if (milesOrKilometers == false)
         {
-            double result = distance / efficiency * kgPr / 1000;
-            return result;
+            //Diesel
+            if (fuelType == true)
+            {
+                double kgco2pergallon = 10.19;
+
+                double result = distance / efficiency * kgco2pergallon / 1000;
+
+                return result;
+            }
+
+            //Gasoline
+            if (fuelType == false)
+            {
+                double kgco2pergallon = 8.78;
+
+                double result = distance / efficiency * kgco2pergallon / 1000;
+
+                return result;
+            }
         }
 
         return 0.0;

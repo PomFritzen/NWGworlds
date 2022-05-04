@@ -8,18 +8,14 @@ public class GearShifter : MonoBehaviour
 
     TextMeshPro gasolineText;
     TextMeshPro dieselText;
+    TextMeshPro hiddenValue;
 
     // Start is called before the first frame update
     void Start()
     {
         gasolineText = GameObject.Find("TextGas").GetComponent<TextMeshPro>();
         dieselText = GameObject.Find("TextDiesel").GetComponent<TextMeshPro>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        hiddenValue = GameObject.Find("GearHiddenValue").GetComponent<TextMeshPro>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,11 +26,14 @@ public class GearShifter : MonoBehaviour
         if (other.gameObject.name == "GSColG")
         {
             gasolineText.color = new Color(255, 0, 0);
+            hiddenValue.text = "Gasoline";
+
         }
 
         if (other.gameObject.name == "GSColD")
         {
             dieselText.color = new Color(255, 0, 0);
+            hiddenValue.text = "Diesel";
         }
     }
 
