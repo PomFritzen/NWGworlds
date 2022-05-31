@@ -39,7 +39,7 @@ public class RespawnBalls : MonoBehaviour
 
         if (other.gameObject.name == "HoopHit" && name == "Scope1Ball")
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(8);
         }
 
         if (other.gameObject.transform.parent.gameObject.name == "TriggerZone")

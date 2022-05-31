@@ -7,6 +7,18 @@ using UnityEngine;
 public static class CalculationFunctions
 {
 
+    static string helperAvatar;
+
+    public static string GetAvatar()
+    {
+        return helperAvatar;
+    }
+
+    public static void SetAvatar(string chosenAvatar)
+    {
+        helperAvatar = chosenAvatar;
+    }
+
     public static ArrayList CarInformation()
     {
         Debug.Log("We are in car information");
@@ -65,7 +77,7 @@ public static class CalculationFunctions
             {
                 double kgco2perlitre = 2.7;
 
-                double result = efficiency / 100 * distance * kgco2perlitre / 1000;
+                double result = carAmount * (efficiency / 100 * distance * kgco2perlitre / 1000);
 
                 return result;
             }
@@ -75,7 +87,7 @@ public static class CalculationFunctions
             {
                 double kgco2perlitre = 2.3;
 
-                double result = efficiency / 100 * distance * kgco2perlitre / 1000;
+                double result = carAmount * (efficiency / 100 * distance * kgco2perlitre / 1000);
 
                 return result;
             }
@@ -89,7 +101,7 @@ public static class CalculationFunctions
             {
                 double kgco2pergallon = 10.19;
 
-                double result = distance / efficiency * kgco2pergallon / 1000;
+                double result = carAmount * (distance / efficiency * kgco2pergallon / 1000);
 
                 return result;
             }
@@ -99,7 +111,7 @@ public static class CalculationFunctions
             {
                 double kgco2pergallon = 8.78;
 
-                double result = distance / efficiency * kgco2pergallon / 1000;
+                double result = carAmount * (distance / efficiency * kgco2pergallon / 1000);
 
                 return result;
             }
