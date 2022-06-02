@@ -1,0 +1,8 @@
+﻿PFPMIE 10300
+Dimethylether 1
+MethyleneChloride 9
+MethylChloride 13
+R290(Propane) 3
+R600A(isobutane) 3
+R1234yf* 1
+R1234ze* 1
