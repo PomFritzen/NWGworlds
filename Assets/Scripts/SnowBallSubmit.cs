@@ -13,6 +13,7 @@ public class SnowBallSubmit : MonoBehaviour
     NumFigReturnVal multi2;
     NumFigReturnVal multi1;
     TextMeshPro amountText;
+    SnowmanSpawner sms;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class SnowBallSubmit : MonoBehaviour
         multi1 = GameObject.Find("MultiColPos1").GetComponent<NumFigReturnVal>();
 
         amountText = GameObject.Find("TotalText").GetComponent<TextMeshPro>();
+        sms = GameObject.Find("SnowmanSpawner").GetComponent<SnowmanSpawner>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -86,6 +88,9 @@ public class SnowBallSubmit : MonoBehaviour
             int newTotal = total + prevTotal;
 
             amountText.text = newTotal.ToString();
+
+            sms.SpawnSnowmen(newTotal);
+            
         }
     }
 
