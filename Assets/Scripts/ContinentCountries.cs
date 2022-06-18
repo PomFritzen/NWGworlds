@@ -31,7 +31,7 @@ public class ContinentCountries : MonoBehaviour
         displayText.text = listOfCountries;
         //CreateInputFields(countries.Count);
         DestroyPreviousFields();
-        GameObject.Find("FieldDestroyer").GetComponent<ContinentFieldDestroyer>().shouldDestroy = false;
+        //GameObject.Find("FieldDestroyer").GetComponent<ContinentFieldDestroyer>().shouldDestroy = false;    
         string cont = GetContinentForInputFields(continent);
         CreateInputFields(cont);
 
@@ -66,8 +66,16 @@ public class ContinentCountries : MonoBehaviour
 
     public void DestroyPreviousFields()
     {
-        GameObject.Find("FieldDestroyer").GetComponent<ContinentFieldDestroyer>().shouldDestroy = true;
+        //GameObject.Find("FieldDestroyer").GetComponent<ContinentFieldDestroyer>().shouldDestroy = true;
+        for (int i = 0; i < 50; i++)
+        {
+            if (GameObject.Find("InputFieldObj(Clone)"+i) != null)
+            {
+                GameObject.Find("InputFieldObj(Clone)" + i).GetComponent<CheckForDestruction>().shouldDestroy = true;
+            }   
+        }
     }
+
 
     public string GetContinentForInputFields(string continent)
     {
@@ -112,6 +120,7 @@ public class ContinentCountries : MonoBehaviour
         GameObject objToClone = GameObject.Find("InputFieldObj");
         Vector3 startPos = GameObject.Find("InputFieldPos").transform.position;
         float yVal = startPos.y;
+        
 
         if (cont == "Asia")
         {
@@ -120,7 +129,7 @@ public class ContinentCountries : MonoBehaviour
             for (int i = 0; i < amt; i++)
             {
                 GameObject clone = Instantiate(objToClone, new Vector3(startPos.x, yVal, startPos.z), Quaternion.identity);
-                clone.GetComponent<TextMeshPro>().text = valueContainer.GetComponent<ContinentValueDisplays>().asia[i].ToString();
+                clone.GetComponentInChildren<TextMeshPro>().text = valueContainer.GetComponent<ContinentValueDisplays>().asia[i].ToString();
                 yVal -= 0.082f;
                 clone.name = clone.name + i;
             }
@@ -133,7 +142,7 @@ public class ContinentCountries : MonoBehaviour
             for (int i = 0; i < amt; i++)
             {
                 GameObject clone = Instantiate(objToClone, new Vector3(startPos.x, yVal, startPos.z), Quaternion.identity);
-                clone.GetComponent<TextMeshPro>().text = valueContainer.GetComponent<ContinentValueDisplays>().africa[i].ToString();
+                clone.GetComponentInChildren<TextMeshPro>().text = valueContainer.GetComponent<ContinentValueDisplays>().africa[i].ToString();
                 yVal -= 0.082f;
                 clone.name = clone.name + i;
             }
@@ -159,7 +168,7 @@ public class ContinentCountries : MonoBehaviour
             for (int i = 0; i < amt; i++)
             {
                 GameObject clone = Instantiate(objToClone, new Vector3(startPos.x, yVal, startPos.z), Quaternion.identity);
-                clone.GetComponent<TextMeshPro>().text = valueContainer.GetComponent<ContinentValueDisplays>().europe[i].ToString();
+                clone.GetComponentInChildren<TextMeshPro>().text = valueContainer.GetComponent<ContinentValueDisplays>().europe[i].ToString();
                 yVal -= 0.082f;
                 clone.name = clone.name + i;
             }
@@ -172,7 +181,7 @@ public class ContinentCountries : MonoBehaviour
             for (int i = 0; i < amt; i++)
             {
                 GameObject clone = Instantiate(objToClone, new Vector3(startPos.x, yVal, startPos.z), Quaternion.identity);
-                clone.GetComponent<TextMeshPro>().text = valueContainer.GetComponent<ContinentValueDisplays>().northAmerica[i].ToString();
+                clone.GetComponentInChildren<TextMeshPro>().text = valueContainer.GetComponent<ContinentValueDisplays>().northAmerica[i].ToString();
                 yVal -= 0.082f;
                 clone.name = clone.name + i;
             }
@@ -185,7 +194,7 @@ public class ContinentCountries : MonoBehaviour
             for (int i = 0; i < amt; i++)
             {
                 GameObject clone = Instantiate(objToClone, new Vector3(startPos.x, yVal, startPos.z), Quaternion.identity);
-                clone.GetComponent<TextMeshPro>().text = valueContainer.GetComponent<ContinentValueDisplays>().southAmerica[i].ToString();
+                clone.GetComponentInChildren<TextMeshPro>().text = valueContainer.GetComponent<ContinentValueDisplays>().southAmerica[i].ToString();
                 yVal -= 0.082f;
                 clone.name = clone.name + i;
             }

@@ -87,7 +87,7 @@ public class ElectricityButtons : MonoBehaviour
         GameObject currentField = GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField);
         string currentText = currentField.GetComponentInChildren<TextMeshPro>().text;
         string newText = currentText + value;
-        currentField.GetComponentInChildren<TextMeshPro>().text = newText;
+        GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField).GetComponentInChildren<TextMeshPro>().text = newText;
 
         AddValueCVDArrayList(Int32.Parse(newText));
     }
@@ -97,7 +97,7 @@ public class ElectricityButtons : MonoBehaviour
         GameObject currentField = GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField);
         string currentText = currentField.GetComponentInChildren<TextMeshPro>().text;
         string newText = currentText.Remove(currentText.Length - 1);
-        currentField.GetComponentInChildren<TextMeshPro>().text = newText;
+        GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField).GetComponentInChildren<TextMeshPro>().text = newText;
 
         AddValueCVDArrayList(Int32.Parse(newText));
     }
@@ -107,7 +107,7 @@ public class ElectricityButtons : MonoBehaviour
         GameObject currentField = GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField);
         string currentText = currentField.GetComponentInChildren<TextMeshPro>().text;
         string newText = "0";
-        currentField.GetComponentInChildren<TextMeshPro>().text = newText;
+        GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField).GetComponentInChildren<TextMeshPro>().text = newText;
 
         AddValueCVDArrayList(Int32.Parse(newText));
     }
