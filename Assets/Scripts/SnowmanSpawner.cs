@@ -13,7 +13,7 @@ public class SnowmanSpawner : MonoBehaviour
     {
         
         int counter = snowmen/100;
-        int snowmenToSpawn = (amountValue - snowmen)/100;
+        int snowmenToSpawn = (amountValue - snowmen)/1000;
 
         while (counter < snowmenToSpawn)
         {

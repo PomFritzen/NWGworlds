@@ -44,8 +44,7 @@ public class ElectricityButtons : MonoBehaviour
 
     public void GoUp()
     {
-        GameObject currentField = GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField);
-        int currentNum = (int)Char.GetNumericValue(currentField.name[name.Length - 1]);
+        int currentNum = GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField;
 
         string activeCountry = GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().activeCountry;
         ArrayList currentList = ActiveList(activeCountry);
@@ -54,17 +53,19 @@ public class ElectricityButtons : MonoBehaviour
         {
             currentNum = 0;
             GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField = currentNum;
+            GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField).GetComponentInChildren<TextMeshPro>().color = new Color(1, 1, 1);
         } else
         {
             currentNum += 1;
             GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField += 1;
+            GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField).GetComponentInChildren<TextMeshPro>().color = new Color(1, 1, 1);
         }
     }
 
     public void GoDown()
     {
-        GameObject currentField = GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField);
-        int currentNum = (int)Char.GetNumericValue(currentField.name[name.Length - 1]);
+
+        int currentNum = GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField;
 
         string activeCountry = GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().activeCountry;
         ArrayList currentList = ActiveList(activeCountry);
@@ -73,11 +74,13 @@ public class ElectricityButtons : MonoBehaviour
         {
             currentNum = currentList.Count-1;
             GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField = currentNum;
+            GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField).GetComponentInChildren<TextMeshPro>().color = new Color(1, 1, 1);
         }
         else
         {
             currentNum -= 1;
             GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField -= 1;
+            GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField).GetComponentInChildren<TextMeshPro>().color = new Color(1, 1, 1);   
         }
     }
 
@@ -90,6 +93,8 @@ public class ElectricityButtons : MonoBehaviour
         GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField).GetComponentInChildren<TextMeshPro>().text = newText;
 
         AddValueCVDArrayList(Int32.Parse(newText));
+        TotalElec te = new TotalElec();
+        te.CalcElecTotal();
     }
 
     public void RemoveValue()
@@ -100,6 +105,8 @@ public class ElectricityButtons : MonoBehaviour
         GameObject.Find("InputFieldObj(Clone)" + GameObject.Find("ListValueContainer").GetComponent<ContinentValueDisplays>().currentField).GetComponentInChildren<TextMeshPro>().text = newText;
 
         AddValueCVDArrayList(Int32.Parse(newText));
+        TotalElec te = new TotalElec();
+        te.CalcElecTotal();
     }
 
     public void ResetValue()

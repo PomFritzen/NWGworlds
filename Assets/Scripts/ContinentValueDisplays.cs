@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using TMPro;
 
 public class ContinentValueDisplays : MonoBehaviour
 {
     public string activeCountry;
     public int currentField;
+    public int grandTotal;
 
     public ArrayList europe;
     public ArrayList asia;
@@ -17,6 +20,8 @@ public class ContinentValueDisplays : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        grandTotal = 0;
+
         africa = new ArrayList();
         asia = new ArrayList();
         australiaOceana = new ArrayList();
@@ -26,7 +31,6 @@ public class ContinentValueDisplays : MonoBehaviour
 
         FillLists();
     }
-
     public void FillLists()
     {
         //No values

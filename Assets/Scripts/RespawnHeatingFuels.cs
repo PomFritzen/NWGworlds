@@ -66,7 +66,6 @@ public class RespawnHeatingFuels : MonoBehaviour
 
             string unit = GameObject.Find("CurrentUnit").GetComponent<TextMeshPro>().text;
             string mText = GameObject.Find("multiValue").GetComponent<TextMeshPro>().text;
-            Debug.Log(mText);
             int multiplier = Int32.Parse(mText);
             hc.UpdateText(name, unit, multiplier);
 

@@ -19,9 +19,7 @@ public class GearShifter : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    {
-
-        
+    {  
         
         if (other.gameObject.name == "GSColG")
         {
