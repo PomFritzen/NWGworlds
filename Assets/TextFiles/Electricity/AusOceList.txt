@@ -1,0 +1,11 @@
+﻿AustralianCapitalTerritory 0.79
+NewSouthWales 0.79
+NorthernTerritory 0.57
+NorthernTerritoryDarwinKatherineInterconnectedSystem(DKIS) 0.54
+Queensland 0.80
+SouthAustralia 0.35
+Tasmania 0.16
+Victoria 0.96
+WesternAustraliaNorthWesternInterconnectedSystem(NWIS) 0.58
+WesternAustraliaSouthWesternInterconnectedSystem(SWIS) 0.68	
+NewZealand 0.101

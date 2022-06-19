@@ -1,0 +1,8 @@
+﻿China 0.5374
+HongKong(China) 0.71
+India 0.7082
+Indonesia 0.7177
+Japan 0.4658
+Korea(Republic) 0.4156
+Singapore 0.408
+Thailand 0.039
